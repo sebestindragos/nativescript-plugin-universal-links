@@ -1,5 +1,6 @@
-/// <reference path="../node_modules/tns-platform-declarations/ios.d.ts" />
-import * as application from "tns-core-modules/application";
+/// <reference path="../node_modules/@nativescript/types-ios/index.d.ts" />
+
+import { Application } from "@nativescript/core";
 import {
   setUniversalLink,
   getRegisteredCallback,
@@ -11,6 +12,7 @@ export {
   registerUniversalLinkCallback
 } from "./plugin-universal-links.common";
 
+@NativeClass
 class CustomUIApplicationDelegate extends UIResponder
   implements UIApplicationDelegate {
   public static ObjCProtocols = [UIApplicationDelegate];
@@ -21,9 +23,9 @@ class CustomUIApplicationDelegate extends UIResponder
 }
 
 // setup app delegate
-let delegate = application.ios.delegate;
+let delegate = Application.ios.delegate;
 if (!delegate) {
-  delegate = application.ios.delegate = CustomUIApplicationDelegate;
+  delegate = Application.ios.delegate = CustomUIApplicationDelegate;
 }
 
 /**

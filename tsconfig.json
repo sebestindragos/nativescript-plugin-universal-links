@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
+      "target": "es2017",
+      "module": "esnext",
+      "moduleResolution": "node",
       "declaration": true,
       "removeComments": true,
       "noLib": false,
@@ -20,10 +21,15 @@
       "noImplicitUseStrict": false,
       "noFallthroughCasesInSwitch": true,
       "sourceRoot": "src/",
-      "outDir": "build/"
+      "outDir": "build/",
+      "plugins": [{
+        "transform": "@nativescript/webpack/transformers/ns-transform-native-classes",
+        "type": "raw"
+      }]
   },
   "exclude": [
-      "node_modules"
+      "node_modules",
+      "build"
   ],
   "compileOnSave": false
 }
