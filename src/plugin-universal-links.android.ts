@@ -1,4 +1,4 @@
-/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
+/// <reference path="./node_modules/@nativescript/types-android/index.d.ts" />
 import { Application, AndroidApplication } from "@nativescript/core";
 import {
   setUniversalLink,
