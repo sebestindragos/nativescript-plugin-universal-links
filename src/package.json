@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "clean": "npx rimraf node_modules package-lock.json && npm i && ts-patch install",
+    "clean": "npx rimraf node_modules package-lock.json && npm i",
     "tsc": "tsc -p tsconfig.json",
     "build": "ts-patch install && npm run tsc",
     "prepack": "npm run build"
