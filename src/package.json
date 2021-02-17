@@ -13,7 +13,7 @@
   "scripts": {
     "clean": "npx rimraf node_modules package-lock.json && npm i && ts-patch install",
     "tsc": "tsc -p tsconfig.json",
-    "build": "npm run tsc",
+    "build": "ts-patch install && npm run tsc",
     "prepack": "npm run build"
   },
   "keywords": [
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "ts-node": "^9.0.0",
+    "ts-patch": "^1.3.0",
     "url-parse": "1.4.7"
   }
 }
